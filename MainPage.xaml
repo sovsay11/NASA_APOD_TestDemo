@@ -1,30 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="NASA_APOD_TestDemo.MainPage">
-    <VerticalStackLayout>
-        <!--Date picker-->
-        <Frame>
-            <VerticalStackLayout>
-                <Label Text="Pick a date" />
-                <DatePicker x:Name="DatePickerLocalDate" />
-            </VerticalStackLayout>
-        </Frame>
+    <ScrollView>
+        <VerticalStackLayout>
+            <!--Image viewer-->
+            <Image x:Name="ImageNASAPicture"
+                   VerticalOptions="StartAndExpand"
+                   IsVisible="Collapse" />
 
-        <!--Button to search-->
-        <Button x:Name="ButtonSearch"
-                Text="APOD Search" />
+            <!--Video viewer-->
+            <WebView x:Name="MediaNASAVideo"
+                     IsVisible="Collapse"
+                     VerticalOptions="StartAndExpand"
+                     HeightRequest="400"
+                     WidthRequest="400" />
 
-        <!--Image viewer-->
-        <Image x:Name="ImageNASAPicture" />
-        
-        <!--Video viewer-->
-        <toolkit:MediaElement x:Name="MediaNASAVideo"
-                              ShouldAutoPlay="True"
-                              ShouldShowPlaybackControls="True"
-                              Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                              HeightRequest="300"
-                              WidthRequest="400" />
-    </VerticalStackLayout>
+            <!--Date picker-->
+            <Frame VerticalOptions="End">
+                <VerticalStackLayout>
+                    <Label Text="Pick a date" />
+                    <DatePicker x:Name="DatePickerLocalDate" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!--Button to search-->
+            <Button x:Name="ButtonSearch"
+                    Text="APOD Search"
+                    VerticalOptions="End"
+                    Clicked="ButtonSearch_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
