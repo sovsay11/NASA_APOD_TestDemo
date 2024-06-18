@@ -98,6 +98,9 @@ namespace NASA_APOD_TestDemo
                     MediaNASAVideo.IsVisible = true;
                     MediaNASAVideo.Source = apodData.Url;
                 }
+
+                LabelTitle.Text = apodData.Title;
+                LabelDescription.Text = apodData.Explanation;
             }
         }
 

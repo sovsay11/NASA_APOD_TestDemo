@@ -4,26 +4,37 @@
              x:Class="NASA_APOD_TestDemo.MainPage">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="2.7*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <VerticalStackLayout VerticalOptions="Center"
-                             Margin="10"
-                             Grid.Row="0">
-            <!--Image viewer-->
-            <Image x:Name="ImageNASAPicture"
-                   IsVisible="Collapse"
-                   HeightRequest="400"
-                   WidthRequest="400" />
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <VerticalStackLayout VerticalOptions="Center"
+                                 Margin="10"
+                                 Grid.Row="0">
+                <!--Title-->
+                <Label x:Name="LabelTitle"
+                       FontSize="Title"
+                       FontAttributes="Bold" />
 
-            <!--Video viewer-->
-            <WebView x:Name="MediaNASAVideo"
-                     IsVisible="Collapse"
-                     HeightRequest="400"
-                     WidthRequest="400" />
-        </VerticalStackLayout>
+                <!--Image viewer-->
+                <Image x:Name="ImageNASAPicture"
+                       IsVisible="Collapse"
+                       HeightRequest="400"
+                       WidthRequest="400" />
 
+                <!--Video viewer-->
+                <WebView x:Name="MediaNASAVideo"
+                         IsVisible="Collapse"
+                         HeightRequest="400"
+                         WidthRequest="400" />
+
+                <!--Description-->
+                <Label x:Name="LabelDescription" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+        
         <VerticalStackLayout VerticalOptions="End"
                              Margin="10"
                              Grid.Row="1">

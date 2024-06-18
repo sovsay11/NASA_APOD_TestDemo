@@ -8,7 +8,7 @@
     Title="NASA_APOD_TestDemo">
 
     <ShellContent
-        Title="Home"
+        Title="NASA APOD App"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
