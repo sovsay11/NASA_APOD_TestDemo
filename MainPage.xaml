@@ -15,13 +15,19 @@
                 <!--Title-->
                 <Label x:Name="LabelTitle"
                        FontSize="Title"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"
+                       Margin="10" />
 
                 <!--Image viewer-->
-                <Image x:Name="ImageNASAPicture"
-                       IsVisible="Collapse"
-                       HeightRequest="400"
-                       WidthRequest="400" />
+                <Border IsVisible="Visible"
+                        StrokeThickness="5"
+                        Margin="5"
+                        BackgroundColor="Black">
+                    <Image x:Name="ImageNASAPicture"
+                           IsVisible="Collapse"
+                           HeightRequest="400"
+                           WidthRequest="400" />
+                </Border>
 
                 <!--Video viewer-->
                 <WebView x:Name="MediaNASAVideo"
@@ -30,11 +36,12 @@
                          WidthRequest="400" />
 
                 <!--Description-->
-                <Label x:Name="LabelDescription" />
+                <Label x:Name="LabelDescription"
+                       Margin="10" />
 
             </VerticalStackLayout>
         </ScrollView>
-        
+
         <VerticalStackLayout VerticalOptions="End"
                              Margin="10"
                              Grid.Row="1">

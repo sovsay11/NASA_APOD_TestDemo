@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NASA_APOD_TestDemo
 {
+    /// <summary>
+    /// Class to hold APOD JSON data
+    /// </summary>
     public class ApodData
     {
         public string? Copyright { get; set; }
